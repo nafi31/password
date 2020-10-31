@@ -1,0 +1,23 @@
+{% extends 'accounts/base.html' %}
+{% block content%}
+
+<table class="table">
+  <thead>
+    <tr>
+
+      <th scope="col">Website</th>
+      <th scope="col">Password</th>
+    </tr>
+  </thead>
+  <tbody>
+  	{% for w in request.user.todo.all %}
+    <tr>
+      <td>{{ w.name}}</td>
+
+      <td> <a href ="/list/{{w.id}}" class="btn btn-outline-primary">Open Password</a></td>
+{% endfor %}
+    </tr>
+  </tbody>
+</table>
+
+{% endblock %}

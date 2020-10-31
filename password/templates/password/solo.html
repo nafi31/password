@@ -1,0 +1,20 @@
+{% extends 'accounts/base.html' %}
+{% block content%}
+
+{% for s in solo.password_set.all  %}
+        <div class="col">
+            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                <div class="card-header">{{s.web}}</div>
+                <div class="card-body">
+                  <h5 class="card-title">Password</h5>
+                  <p class="card-text">{{s.password}}</p>
+                  <form method="POST" action="">   
+                  	{% csrf_token %}
+                  	<button class="btn btn-outline-danger" type="submit">Delete</button>
+                  </form>
+                </div>
+            </div>
+        
+        </div>
+{% endfor %}
+{% endblock %}

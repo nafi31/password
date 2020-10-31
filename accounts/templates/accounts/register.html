@@ -1,0 +1,18 @@
+
+{% extends 'accounts/base.html' %}
+{% load crispy_forms_tags %}
+{% block content%}
+<div class="row">
+<div class="container col">
+<form method="POST" action="">
+{% csrf_token %}
+{{form|crispy}}	
+<button type="submit" class="btn btn-primary">Register</button>
+</form>
+</div>
+<div class="col">
+    <a title="Google" class="socialaccount_provider google btn btn-primary" 
+    href="/accounts/google/login/?process=login">sign up with <span class="	fab fa-google-plus-g"></span></a>
+</div>
+</div>
+{% endblock %}
